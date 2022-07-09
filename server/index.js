@@ -20,13 +20,12 @@ const start = async () => {
         // const client = new MongoClient(process.env?.DB_URL, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
         await mongoose.connect(DB_URL, {
             useNewUrlParser: true,
-            useUnifiedTopology: true
-        },() => {
-            console.log('mongoose')
-        });
+            useUnifiedTopology: true,
+        })
         app.listen(PORT,  () => {
             console.log(`Server started on localhost:${PORT}`)
         })
+
         // await client.connect(err => {
         //     const collection = client.db("test").collection("devices");
         //     console.error(err, collection)
